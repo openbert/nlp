@@ -1,0 +1,8 @@
+POST http://localhost:5000/
+Content-Type: application/json
+
+{
+  "text": "Der Text handelt in Velbert vom Bürgermeister Max Mustermann."
+}
+
+###
