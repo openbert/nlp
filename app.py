@@ -1,6 +1,6 @@
 import json
 import spacy
-from flask import Flask, request
+from flask import Flask, request, Response
 
 nlp = spacy.load('de_core_news_md')
 app = Flask(__name__)
@@ -22,8 +22,7 @@ def name_entities():
             "endChar": ent.end_char,
         })
 
-    return json.dumps(nerResponse)
-
+    return Response(json.dumps(nerResponse), mimetype="application/json")
 
 @app.route('/health', methods=['GET'])
 def health():
