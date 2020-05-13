@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: Openbert Named Entity Recognition Service
+  description: Openbert Named Entity Recognition Service
+  version: 1.0.0
+servers:
+  - url: 'https://ner.openbert.nrw'
+paths:
+  /:
+    post:
+      responses:
+        200:
+          description: "Found entities"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: Velbert
+                        label:
+                          type: string
+                          example: LOC
+                        startChar:
+                          type: number
+                          example: 20
+                        endChar:
+                          type: number
+                          example: 27
+  /health:
+    get:
+      responses:
+        200:
+          description: Endpoint to check if the application is running and ready to process requests.
+          content:
+            plain/text:
+              example: ok
