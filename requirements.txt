@@ -1,3 +1,4 @@
 https://github.com/explosion/spacy-models/releases/download/de_core_news_md-2.2.5/de_core_news_md-2.2.5.tar.gz#egg=de_core_news_md
 Flask==1.1.2
 spacy==2.2.4
+waitress==1.4.4

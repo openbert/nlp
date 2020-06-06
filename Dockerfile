@@ -6,10 +6,9 @@ ADD requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 
 ADD app.py /app/app.py
+ADD server.py /app/server.py
 
-ENV FLASK_APP=/app/app.py
-ENV FLASK_ENV=production
-
+ENV PORT=80
 EXPOSE 80
 
-CMD ["flask", "run", "--port=80", "--host=0.0.0.0"]
+CMD ["python3", "/app/server.py"]
